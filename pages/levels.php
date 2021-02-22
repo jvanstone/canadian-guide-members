@@ -32,7 +32,7 @@ if($pmpro_msg)
 <?php
 }
 ?>
-<div id="pmpro_levels_table" class="<?php echo pmpro_get_element_class( 'pmpro_table pmpro_checkout', 'pmpro_levels_table' ); ?>">
+<div id="pmpro_levels_table" class="<?php echo pmpro_get_element_class( 'pmpro_table pmpro_checkout', 'pmpro_levels_table' ); ?>  col-sm-5">
 	
 	<ul class="pmpro_level_price">
 		<li><?php _e('Level', 'paid-memberships-pro' );?></li>
@@ -99,7 +99,7 @@ if($pmpro_msg)
 
 </div> <!-- end of TABLE -->
 
-<div class="why-register">
+<div class="why-register col-sm-5">
 
 	<h1>Top 5 reasons to Sign-up</h1>
 

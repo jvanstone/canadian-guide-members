@@ -580,6 +580,8 @@ li.pmpro_more {
 #pmpro_levels_table .pmpro_btn {
 	display: block;
 }
+
+
 /*---------------------------------------
 	Misc
 ---------------------------------------*/
@@ -694,4 +696,115 @@ li.pmpro_more {
 	.pmpro_invoice_details {
 		display: block;
 	}
+}
+
+
+
+
+/*---------------------------------------
+	Register
+---------------------------------------*/
+#pmpro_register {
+    margin: 0 auto;
+    padding: 1rem .5rem;
+    display: flex;
+    width: 100%;   
+    max-width: 80rem;
+    flex-flow: row wrap;
+    align-content: center;
+    justify-content: space-between;
+
+}
+
+#pmpro_levels_table {
+    //border: $border-test;
+    margin: 10px 20px; 
+    min-width: 15rem;
+    max-width: 25rem;
+
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+.odd, .even {
+    margin: 10px 0;
+    border: $border-test;
+    background-color: #fff;
+    
+    flex-direction: column;
+    min-width: 15rem;
+    max-width: 25rem;
+    height: 15rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.why-register {
+    //border: $border-test;
+    margin: 0 20px; 
+    padding: 10px;
+    min-width: 15rem;
+    max-width: 25rem;
+ 
+    background-color: $backgroundcolor2;
+//  border-radius: 50%;
+
+    text-align: center;
+    vertical-align: top;
+    display: flex;
+    flex-flow: column nowrap;
+    font-weight: bold;
+}
+
+
+.why-register ul, .checkmark-list {
+    list-style: none;
+    text-align: left;
+  }
+.why-register li:before, .checkmark-list  li:before {
+    margin: 0 2px;
+    padding: 10px;
+    content: '✓';
+
+} 
+
+
+#pmpro_level_cost { 
+    padding: 5px;
+     font-size: 20px; 
+     background-color: $h2-background;
+
+}
+
+#pmpro_level_cost span {
+    margin: 20px;
+    border: 1px solid #000;
+}
+//Hide the levels and pricing labels at Register 
+.pmpro_level_price { display: none;}
+
+
+.pmpro_content_message {
+    padding: 20px;
+    //border: $border-test;
+    height: 400px;
+    //font-size: $h2-size;
+    line-height: $line-height;
+}
+
+
+
+h3.flex-td {
+    margin: 0;
+    margin-bottom: 10px;
+    background-color: $backgroundcolor2;
+    border: solid 1px #3f2020;
+    height: 2rem;
+    //font-size: $h2-size;
+}
+
+.pmpro_login_wrap > h2 {
+    display: none;
 }
