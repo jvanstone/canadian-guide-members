@@ -34,7 +34,7 @@ if($pmpro_msg)
 ?>
 
 
-	</ul>
+
 <div id="pmpro_levels_table" class="<?php echo pmpro_get_element_class( 'pmpro_table pmpro_checkout', 'pmpro_levels_table' ); ?>  col-sm-5">
 	<h2>Get the lastest issues!</h2> 
 
@@ -108,6 +108,6 @@ if($pmpro_msg)
 	<?php if(!empty($current_user->membership_level->ID)) { ?>
 		<a href="<?php echo pmpro_url("account")?>" id="pmpro_levels-return-account"><?php _e('&larr; Return to Your Account', 'paid-memberships-pro' );?></a>
 	<?php } else { ?>
-		<a href="<?php echo home_url()?>" id="pmpro_levels-return-home"><?php _e('&larr; Return to Home', 'paid-memberships-pro' );?></a>
+	<!--	<a href="<?php echo home_url()?>" id="pmpro_levels-return-home"><?php //_e('&larr; Return to Home', 'paid-memberships-pro' );?></a> ..>
 	<?php } ?>
 </p> <!-- end pmpro_actions_nav -->
