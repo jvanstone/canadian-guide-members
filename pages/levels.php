@@ -55,15 +55,17 @@ if($pmpro_msg)
 		$levelClass='even';
 	} 
 	?>
-	<li class="<?=$levelClass;?><?php if($current_level == $level) { ?> active<?php } ?>">
+	<li class="<?=$levelClass;?><?php if($current_level == $level) { ?> <?php } ?>">
 		<?php 
 		//Show the Title Name 
 		echo $current_level ? "{$level->name}" : $level->name; ?>
 
 
 		<?php if(empty($current_user->membership_level->ID)) { ?>
+			
 					<a class="<?php echo pmpro_get_element_class( 'pmpro_btn pmpro_btn-select', 'pmpro_btn-select' ); ?> button-get" href="<?php echo pmpro_url("checkout", "?level=" . $level->id, "https")?>"><?php _e('Select', 'paid-memberships-pro' );?></a>
-				<?php } elseif ( !$current_level ) { ?>                	
+				<?php } elseif ( !$current_level ) { ?>  
+					             	
 					<a class="<?php echo pmpro_get_element_class( 'pmpro_btn pmpro_btn-select', 'pmpro_btn-select' ); ?> button-get" href="<?php echo pmpro_url("checkout", "?level=" . $level->id, "https")?>"><?php _e('Select', 'paid-memberships-pro' );?></a>
 				<?php } elseif($current_level) { ?>
 		
@@ -77,7 +79,7 @@ if($pmpro_msg)
 					<?php
 				} else {
 					?>
-						<a class="<?php echo pmpro_get_element_class( 'pmpro_btn disabled', 'pmpro_btn' ); ?>" href="<?php echo pmpro_url("account")?>"><?php _e('Your&nbsp;Level', 'paid-memberships-pro' );?></a>
+						<a class="<?php echo pmpro_get_element_class( 'pmpro_btn disabled', 'pmpro_btn' ); ?>" href="<?php echo pmpro_url("account")?>"><?php _e('✓', 'paid-memberships-pro' );?></a>
 					<?php
 				}
 			?>

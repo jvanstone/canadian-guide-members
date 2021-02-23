@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Paid Memberships Pro
  * Plugin URI: https://www.paidmembershipspro.com
- * Description: (CG V1)The most complete member management and membership subscriptions plugin for WordPress.
+ * Description: (CG V1.0)The most complete member management and membership subscriptions plugin for WordPress.
  * Version: 2.5.2
  * Author: Stranger Studios
  * Author URI: https://www.strangerstudios.com

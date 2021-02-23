@@ -32,15 +32,17 @@ function pmpro_shortcode_account($atts, $content=null, $code="")
 	$invoices = $wpdb->get_results("SELECT *, UNIX_TIMESTAMP(CONVERT_TZ(timestamp, '+00:00', @@global.time_zone)) as timestamp FROM $wpdb->pmpro_membership_orders WHERE user_id = '$current_user->ID' AND status NOT IN('review', 'token', 'error') ORDER BY timestamp DESC LIMIT 6");
 	?>
 	<div id="pmpro_account">
+
 		<?php if(in_array('membership', $sections) || in_array('memberships', $sections)) { ?>
+			<h3><?php _e("My Subscriptions", 'paid-memberships-pro' );?></h3>
 			<div id="pmpro_account-membership" class="<?php echo pmpro_get_element_class( 'pmpro_box', 'pmpro_account-membership' ); ?>">
 
-				<h3><?php _e("My Memberships", 'paid-memberships-pro' );?></h3>
+				
 				<table class="<?php echo pmpro_get_element_class( 'pmpro_table' ); ?>" width="100%" cellpadding="0" cellspacing="0" border="0">
 					<thead>
 						<tr>
-							<th><?php _e("Level", 'paid-memberships-pro' );?></th>
-							<th><?php _e("Billing", 'paid-memberships-pro' ); ?></th>
+							<th><?php _e("Subscription", 'paid-memberships-pro' );?></th>
+							<th><?php _e("Paid", 'paid-memberships-pro' ); ?></th>
 							<th><?php _e("Expiration", 'paid-memberships-pro' ); ?></th>
 						</tr>
 					</thead>
@@ -103,7 +105,7 @@ function pmpro_shortcode_account($atts, $content=null, $code="")
 											$pmpro_member_action_links['change'] = sprintf( '<a id="pmpro_actionlink-change" href="%s">%s</a>', pmpro_url( 'levels' ), esc_html__( 'Change', 'paid-memberships-pro' ) );
 										}
 
-										$pmpro_member_action_links['cancel'] = sprintf( '<a id="pmpro_actionlink-cancel" href="%s">%s</a>', esc_url( add_query_arg( 'levelstocancel', $level->id, pmpro_url( 'cancel' ) ) ), esc_html__( 'Cancel', 'paid-memberships-pro' ) );
+										//	$pmpro_member_action_links['cancel'] = sprintf( '<a id="pmpro_actionlink-cancel" href="%s">%s</a>', esc_url( add_query_arg( 'levelstocancel', $level->id, pmpro_url( 'cancel' ) ) ), esc_html__( 'Cancel', 'paid-memberships-pro' ) );
 
 										$pmpro_member_action_links = apply_filters( 'pmpro_member_action_links', $pmpro_member_action_links );
 

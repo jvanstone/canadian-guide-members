@@ -513,12 +513,12 @@ function pmpro_member_profile_edit_form() {
 			?>
 
 			<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout_box-user' ); ?>">
-				<div class="<?php echo pmpro_get_element_class( 'pmpro_member_profile_edit-fields' ); ?>">
+				<div class="row <?php echo pmpro_get_element_class( 'pmpro_member_profile_edit-fields' ); ?>">
 				<?php foreach ( $user_fields as $field_key => $label ) { ?>
-					<div class="<?php echo pmpro_get_element_class( 'pmpro_member_profile_edit-field pmpro_member_profile_edit-field- ' . $field_key, 'pmpro_member_profile_edit-field- ' . $field_key ); ?>">
-						<label for="<?php echo esc_attr( $field_key ); ?>"><?php esc_html_e( $label ); ?></label>
+					<div class="col-md-6 <?php echo pmpro_get_element_class( 'pmpro_member_profile_edit-field pmpro_member_profile_edit-field- ' . $field_key, 'pmpro_member_profile_edit-field- ' . $field_key ); ?>">
+						<label class="form-label" for="<?php echo esc_attr( $field_key ); ?>"><?php esc_html_e( $label ); ?></label>
 						<?php if ( current_user_can( 'manage_options' ) && $field_key === 'user_email' ) { ?>
-							<input type="text" readonly="readonly" name="user_email" id="user_email" value="<?php echo esc_attr( $user->user_email ); ?>" class="<?php echo pmpro_get_element_class( 'input', 'user_email' ); ?>" />
+							<input type="text" readonly="readonly" name="user_email" id="user_email" value="<?php echo esc_attr( $user->user_email ); ?>" class="form-control<?php echo pmpro_get_element_class( 'input', 'user_email' ); ?>" />
 							<p class="<?php echo pmpro_get_element_class( 'lite' ); ?>"><?php esc_html_e( 'Site administrators must use the WordPress dashboard to update their email address.', 'paid-memberships-pro' ); ?></p>
 						<?php } else { ?>
 							<input type="text" name="<?php echo esc_attr( $field_key ); ?>" id="<?php echo esc_attr( $field_key ); ?>" value="<?php echo esc_attr( stripslashes( $user->{$field_key} ) ); ?>" class="<?php echo pmpro_get_element_class( 'input', $field_key ); ?>" />
