@@ -546,10 +546,10 @@ function pmpro_login_form( $args = array() ) {
  */
 function pmpro_lost_password_form() { ?>
 	<form id="lostpasswordform" class="<?php echo pmpro_get_element_class( 'pmpro_form', 'lostpasswordform' ); ?>" action="<?php echo wp_lostpassword_url(); ?>" method="post">
-		<div class="<?php echo pmpro_get_element_class( 'pmpro_lost_password-fields' ); ?>">
+		<div class="col-md-8" <?php echo pmpro_get_element_class( 'pmpro_lost_password-fields' ); ?>">
 			<div class="<?php echo pmpro_get_element_class( 'pmpro_lost_password-field pmpro_lost_password-field-user_login', 'pmpro_lost_password-field-user_login' ); ?>">
-				<label for="user_login"><?php esc_html_e( 'Username or Email Address', 'paid-memberships-pro' ); ?></label>
-				<input type="text" name="user_login" id="user_login" class="<?php echo pmpro_get_element_class( 'input', 'user_login' ); ?>" size="20" />
+				<label for="user_login" class="form-label"><?php esc_html_e( 'Username or Email Address', 'paid-memberships-pro' ); ?></label>
+				<input type="text" name="user_login" id="user_login" class="form-control <?php echo pmpro_get_element_class( 'input', 'user_login' ); ?>" />
 			</div>
 		</div> <!-- end pmpro_lost_password-fields -->
 		<div class="<?php echo pmpro_get_element_class( 'pmpro_submit' ); ?>">
