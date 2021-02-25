@@ -144,8 +144,9 @@ function pmpro_shortcode_account($atts, $content=null, $code="")
 				</table>
 				<?php //Todo: If there are multiple levels defined that aren't all in the same group defined as upgrades/downgrades ?>
 				<div class="<?php echo pmpro_get_element_class( 'pmpro_actionlinks' ); ?>">
-					<a id="pmpro_actionlink-levels" href="<?php echo pmpro_url("levels")?>"><?php _e("View all Membership Options", 'paid-memberships-pro' );?></a>
-				</div>
+<!-- 					<a id="pmpro_actionlink-levels" href="<?php //echo pmpro_url("levels")?>"><?php //_e("View all Membership Options", 'paid-memberships-pro' );?></a>
+ -->					<a id="" href="<?php echo get_site_url(). 'canada-information-guides/' ?>"><?php _e("View all Guides Available", 'paid-memberships-pro' );?></a>
+ 						
 
 			</div> <!-- end pmpro_account-membership -->
 		<?php } ?>

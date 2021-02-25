@@ -94,6 +94,11 @@ function pmpro_get_order_json() {
 add_action('wp_ajax_pmpro_get_order_json', 'pmpro_get_order_json');
 
 function pmpro_update_level_order() {
+
+	// only admins can get this
+	if ( ! function_exists( 'current_user_can' ) || ( ! current_user_can( 'manage_options' ) && ! current_user_can( 'pmpro_membershiplevels' ) ) ) {
+		die( __( 'You do not have permissions to perform this action.', 'paid-memberships-pro' ) );
+	}
 	
 	$level_order = null;
 	
