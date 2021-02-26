@@ -86,7 +86,7 @@ if($pmpro_msg)
 					?>
 					
 						<li><a class="<?php echo pmpro_get_element_class( 'pmpro_btn disabled', 'pmpro_btn' ); ?>" href="<?php echo pmpro_url("account")?>"><?php _e('✓', 'paid-memberships-pro' );?></a></li>
-						<li><a href="<?php echo get_site_url() ?>/2021/02/23/canada-info-guide-1/">You have access, see it now!</a></li>
+						<li><a href="<?php echo get_site_url() ?>/canada-info-guide-issue-1/">You have access, see it now!</a></li>
 					</ul>
 					<?php
 				}
