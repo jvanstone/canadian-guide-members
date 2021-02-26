@@ -56,17 +56,22 @@ if($pmpro_msg)
 	} 
 	?>
 	<li class="<?=$levelClass;?><?php if($current_level == $level) { ?> <?php } ?>">
+
+	<ul class="latest-issue">
+		<li>
 		<?php 
+
+		
 		//Show the Title Name 
 		echo $current_level ? "{$level->name}" : $level->name; ?>
 
-
+		</li>
 		<?php if(empty($current_user->membership_level->ID)) { ?>
-			
-					<a class="<?php echo pmpro_get_element_class( 'pmpro_btn pmpro_btn-select', 'pmpro_btn-select' ); ?> button-get" href="<?php echo pmpro_url("checkout", "?level=" . $level->id, "https")?>"><?php _e('Select', 'paid-memberships-pro' );?></a>
+		
+					<li><a class="<?php echo pmpro_get_element_class( 'pmpro_btn pmpro_btn-select', 'pmpro_btn-select' ); ?> button-get" href="<?php echo pmpro_url("checkout", "?level=" . $level->id, "https")?>"><?php _e('Select', 'paid-memberships-pro' );?></a></li>
 				<?php } elseif ( !$current_level ) { ?>  
 					             	
-					<a class="<?php echo pmpro_get_element_class( 'pmpro_btn pmpro_btn-select', 'pmpro_btn-select' ); ?> button-get" href="<?php echo pmpro_url("checkout", "?level=" . $level->id, "https")?>"><?php _e('Select', 'paid-memberships-pro' );?></a>
+					<li><a class="<?php echo pmpro_get_element_class( 'pmpro_btn pmpro_btn-select', 'pmpro_btn-select' ); ?> button-get" href="<?php echo pmpro_url("checkout", "?level=" . $level->id, "https")?>"><?php _e('Select', 'paid-memberships-pro' );?></a></li>
 				<?php } elseif($current_level) { ?>
 		
 <?php   ?>      
@@ -75,11 +80,14 @@ if($pmpro_msg)
 				//if it's a one-time-payment level, offer a link to renew				
 				if( pmpro_isLevelExpiringSoon( $current_user->membership_level) && $current_user->membership_level->allow_signups ) {
 					?>
-						<a class="<?php echo pmpro_get_element_class( 'pmpro_btn pmpro_btn-select', 'pmpro_btn-select' ); ?>" href="<?php echo pmpro_url("checkout", "?level=" . $level->id, "https")?>"><?php _e('Renew', 'paid-memberships-pro' );?></a>
+						<li><a class="<?php echo pmpro_get_element_class( 'pmpro_btn pmpro_btn-select', 'pmpro_btn-select' ); ?>" href="<?php echo pmpro_url("checkout", "?level=" . $level->id, "https")?>"><?php _e('Renew', 'paid-memberships-pro' );?></a></li>
 					<?php
 				} else {
 					?>
-						<a class="<?php echo pmpro_get_element_class( 'pmpro_btn disabled', 'pmpro_btn' ); ?>" href="<?php echo pmpro_url("account")?>"><?php _e('✓', 'paid-memberships-pro' );?></a>
+					
+						<li><a class="<?php echo pmpro_get_element_class( 'pmpro_btn disabled', 'pmpro_btn' ); ?>" href="<?php echo pmpro_url("account")?>"><?php _e('✓', 'paid-memberships-pro' );?></a></li>
+						<li><a href="'. get_site_url() . '/canada-information-guides/">You have access, see it now!</a></li>
+					</ul>
 					<?php
 				}
 			?>
