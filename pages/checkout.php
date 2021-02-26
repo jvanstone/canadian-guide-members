@@ -259,7 +259,7 @@
 				<a href="javascript:void(0);" class="<?php echo pmpro_get_element_class( 'pmpro_radio' ); ?>"><?php _e('Check Out with PayPal', 'paid-memberships-pro' );?></a>
 			</span>	
 			<span class="col-md-5 <?php echo pmpro_get_element_class( 'gateway_paypal' ); ?>">
-				<input type="radio" name="gateway" value="paypal" <?php if($gateway == "paypal") {  } ?> />
+				<input type="radio" name="gateway" value="paypal" <?php if($gateway == "paypal") { ?> checked="checked" <?php }?> />
 				<a href="javascript:void(0);" class="<?php echo pmpro_get_element_class( 'pmpro_radio' ); ?>"><?php _e('Check Out with a Credit Card Here', 'paid-memberships-pro' );?></a>
 			</span>
 			
