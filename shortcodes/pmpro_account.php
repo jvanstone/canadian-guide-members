@@ -40,13 +40,13 @@ function pmpro_shortcode_account($atts, $content=null, $code="")
 				
 				<div class="row <?php echo pmpro_get_element_class( 'pmpro_table' ); ?>" width="100%" cellpadding="0" cellspacing="0" border="0">
 					
-							<div class="col-8">
-								<b><?php _e("Subscription", 'paid-memberships-pro' );?></b>
+							<div class="col-12">
+								<b><?php _e("My Subscriptions", 'paid-memberships-pro' );?></b>
 							</div>
-							<div class="col-2">
-								<b><?php _e("Paid", 'paid-memberships-pro' ); ?></b>
+							<!-- <div class="col-2">
+								<b><?php //_e("Paid", 'paid-memberships-pro' ); ?></b>
 								<?php //_e("Expiration", 'paid-memberships-pro' ); ?>	
-							</div>
+							</div> -->
 					
 			
 						<?php if ( empty( $mylevels ) ) { ?>
@@ -83,7 +83,7 @@ function pmpro_shortcode_account($atts, $content=null, $code="")
 								foreach($mylevels as $level) {
 							?>
 							
-								<div class="col-8 <?php echo pmpro_get_element_class( 'pmpro_account-membership-levelname' ); ?>">
+								<div class="col-12 m-1 <?php echo pmpro_get_element_class( 'pmpro_account-membership-levelname' ); ?>">
 									<?php echo $level->name?>
 									<div class="<?php echo pmpro_get_element_class( 'pmpro_actionlinks' ); ?>">
 										<?php do_action("pmpro_member_action_links_before"); ?>
@@ -124,10 +124,10 @@ function pmpro_shortcode_account($atts, $content=null, $code="")
 										<?php do_action("pmpro_member_action_links_after"); ?>
 									</div> <!-- end pmpro_actionlinks -->
 								</div>
-								<div class="col-2 <?php echo pmpro_get_element_class( 'pmpro_account-membership-levelfee' ); ?>">
-									<p><?php echo pmpro_getLevelCost($level, true, true);?></p>
-									</div>
-								<divclass="<?php echo pmpro_get_element_class( 'pmpro_account-membership-expiration' ); ?>">
+								<!-- <div class="col-2 <?php echo pmpro_get_element_class( 'pmpro_account-membership-levelfee' ); ?>">
+									<p><?php //echo pmpro_getLevelCost($level, true, true);?></p>
+								</div>
+								<div class="<?php //echo pmpro_get_element_class( 'pmpro_account-membership-expiration' ); ?>">
 								<?php
 									if($level->enddate)
 										$expiration_text = date_i18n( get_option( 'date_format' ), $level->enddate );
@@ -136,7 +136,7 @@ function pmpro_shortcode_account($atts, $content=null, $code="")
 
 								    	//echo apply_filters( 'pmpro_account_membership_expiration_text', $expiration_text, $level );
 								?>
-								
+								</div> -->
 							
 							<?php } ?>
 						<?php } ?>
