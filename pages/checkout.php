@@ -306,11 +306,11 @@
 
 			<div class="col-md-12 <?php echo pmpro_get_element_class( 'pmpro_checkout-field pmpro_checkout-field-baddress1', 'pmpro_checkout-field-baddress1' ); ?>">
 				<label class="form-label" for="baddress1"><?php _e('Address 1', 'paid-memberships-pro' );?></label>
-				<input id="baddress1" name="baddress1" type="text" class="form-control <?php echo pmpro_get_element_class( 'input', 'baddress1' ); ?>" placeholder="1234 Main St" value="<?php echo esc_attr($baddress1); ?>" />
+				<input id="baddress1" name="baddress1" type="text" class="form-control <?php echo pmpro_get_element_class( 'input', 'baddress1' ); ?>" placeholder="" value="<?php echo esc_attr($baddress1); ?>" />
 			</div> <!-- end pmpro_checkout-field-baddress1 -->
 			<div class="col-md-12 <?php echo pmpro_get_element_class( 'pmpro_checkout-field pmpro_checkout-field-baddress2', 'pmpro_checkout-field-baddress2' ); ?>">
 				<label class="form-label" for="baddress2"><?php _e('Address 2', 'paid-memberships-pro' );?></label>
-				<input id="baddress2" name="baddress2" type="text" class=" form-control <?php echo pmpro_get_element_class( 'input', 'baddress2' ); ?>" placeholder="Apartment, studio, or floor" value="<?php echo esc_attr($baddress2); ?>" />
+				<input id="baddress2" name="baddress2" type="text" class=" form-control <?php echo pmpro_get_element_class( 'input', 'baddress2' ); ?>" placeholder="" value="<?php echo esc_attr($baddress2); ?>" />
 			</div> <!-- end pmpro_checkout-field-baddress2 -->
 			<?php
 				$longform_address = apply_filters("pmpro_longform_address", true);
