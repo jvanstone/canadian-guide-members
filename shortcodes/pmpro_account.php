@@ -38,18 +38,19 @@ function pmpro_shortcode_account($atts, $content=null, $code="")
 			<div id="pmpro_account-membership" class="<?php echo pmpro_get_element_class( 'pmpro_box', 'pmpro_account-membership' ); ?>">
 
 				
-				<table class="<?php echo pmpro_get_element_class( 'pmpro_table' ); ?>" width="100%" cellpadding="0" cellspacing="0" border="0">
-					<thead>
-						<tr>
-							<th><?php _e("Subscription", 'paid-memberships-pro' );?></th>
-							<th><?php _e("Paid", 'paid-memberships-pro' ); ?></th>
-							<th><?php _e("Expiration", 'paid-memberships-pro' ); ?></th>
-						</tr>
-					</thead>
-					<tbody>
+				<div class="row <?php echo pmpro_get_element_class( 'pmpro_table' ); ?>" width="100%" cellpadding="0" cellspacing="0" border="0">
+					
+							<div class="col-8">
+								<b><?php _e("Subscription", 'paid-memberships-pro' );?></b>
+							</div>
+							<div class="col-2">
+								<b><?php _e("Paid", 'paid-memberships-pro' ); ?></b>
+								<?php //_e("Expiration", 'paid-memberships-pro' ); ?>	
+							</div>
+					
+			
 						<?php if ( empty( $mylevels ) ) { ?>
-						<tr>
-							<td colspan="3">
+						
 							<?php
 							// Check to see if the user has a cancelled order
 							$order = new MemberOrder();
@@ -67,23 +68,22 @@ function pmpro_shortcode_account($atts, $content=null, $code="")
 							// Show the correct checkout link.
 							if ( ! empty( $level ) && ! empty( $level->allow_signups ) ) {
 								$url = pmpro_url( 'checkout', '?level=' . $level->id );
-								printf( __( "Your membership is not active. <a href='%s'>Renew now.</a>", 'paid-memberships-pro' ), $url );
+								printf( __( "You have no subscriptions. <a href='%s'>Renew now.</a>", 'paid-memberships-pro' ), $url );
 							} elseif ( ! empty( $default_level_id ) ) {
 								$url = pmpro_url( 'checkout', '?level=' . $default_level_id );
-								printf( __( "You do not have an active membership. <a href='%s'>Register here.</a>", 'paid-memberships-pro' ), $url );
+								printf( __( "You have no subscriptions. <a href='%s'>Register here.</a>", 'paid-memberships-pro' ), $url );
 							} else {
 								$url = pmpro_url( 'levels' );
-								printf( __( "You do not have an active membership. <a href='%s'>Choose a membership level.</a>", 'paid-memberships-pro' ), $url );
+								printf( __( "You have no subscriptions. <a href='%s'>Choose a membership level.</a>", 'paid-memberships-pro' ), $url );
 							}
 							?>
-							</td>
-						</tr>
+						
 							<?php } else { ?>
 							<?php
 								foreach($mylevels as $level) {
 							?>
-							<tr>
-								<td class="<?php echo pmpro_get_element_class( 'pmpro_account-membership-levelname' ); ?>">
+							
+								<div class="col-8 <?php echo pmpro_get_element_class( 'pmpro_account-membership-levelname' ); ?>">
 									<?php echo $level->name?>
 									<div class="<?php echo pmpro_get_element_class( 'pmpro_actionlinks' ); ?>">
 										<?php do_action("pmpro_member_action_links_before"); ?>
@@ -123,25 +123,25 @@ function pmpro_shortcode_account($atts, $content=null, $code="")
 
 										<?php do_action("pmpro_member_action_links_after"); ?>
 									</div> <!-- end pmpro_actionlinks -->
-								</td>
-								<td class="<?php echo pmpro_get_element_class( 'pmpro_account-membership-levelfee' ); ?>">
+								</div>
+								<div class="col-2 <?php echo pmpro_get_element_class( 'pmpro_account-membership-levelfee' ); ?>">
 									<p><?php echo pmpro_getLevelCost($level, true, true);?></p>
-								</td>
-								<td class="<?php echo pmpro_get_element_class( 'pmpro_account-membership-expiration' ); ?>">
+									</div>
+								<divclass="<?php echo pmpro_get_element_class( 'pmpro_account-membership-expiration' ); ?>">
 								<?php
 									if($level->enddate)
 										$expiration_text = date_i18n( get_option( 'date_format' ), $level->enddate );
 									else
 										$expiration_text = "---";
 
-								    	echo apply_filters( 'pmpro_account_membership_expiration_text', $expiration_text, $level );
+								    	//echo apply_filters( 'pmpro_account_membership_expiration_text', $expiration_text, $level );
 								?>
-								</td>
-							</tr>
+								
+							
 							<?php } ?>
 						<?php } ?>
-					</tbody>
-				</table>
+					
+				</div>
 				<?php //Todo: If there are multiple levels defined that aren't all in the same group defined as upgrades/downgrades ?>
 				<div class="<?php echo pmpro_get_element_class( 'pmpro_actionlinks' ); ?>">
 <!-- 					<a id="pmpro_actionlink-levels" href="<?php //echo pmpro_url("levels")?>"><?php //_e("View all Membership Options", 'paid-memberships-pro' );?></a>
@@ -211,9 +211,8 @@ function pmpro_shortcode_account($atts, $content=null, $code="")
 				<thead>
 					<tr>
 						<th><?php _e("Date", 'paid-memberships-pro' ); ?></th>
-						<th><?php _e("Level", 'paid-memberships-pro' ); ?></th>
+						<th><?php _e("Issue", 'paid-memberships-pro' ); ?></th>
 						<th><?php _e("Amount", 'paid-memberships-pro' ); ?></th>
-						<th><?php _e("Status", 'paid-memberships-pro'); ?></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -243,7 +242,7 @@ function pmpro_shortcode_account($atts, $content=null, $code="")
 							<td><a href="<?php echo pmpro_url("invoice", "?invoice=" . $invoice->code)?>"><?php echo date_i18n(get_option("date_format"), $invoice->getTimestamp())?></a></td>
 							<td><?php if(!empty($invoice->membership_level)) echo $invoice->membership_level->name; else echo __("N/A", 'paid-memberships-pro' );?></td>
 							<td><?php echo pmpro_formatPrice($invoice->total)?></td>
-							<td><?php echo $display_status; ?></td>
+							<!-- <td><?php //echo $display_status; ?></td> -->
 						</tr>
 						<?php
 					}
