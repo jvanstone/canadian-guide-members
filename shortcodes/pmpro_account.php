@@ -35,13 +35,10 @@ function pmpro_shortcode_account($atts, $content=null, $code="")
 
 		<?php if(in_array('membership', $sections) || in_array('memberships', $sections)) { ?>
 			<h3><?php _e("My Subscriptions", 'paid-memberships-pro' );?></h3>
-			<div id="pmpro_account-membership" class="<?php echo pmpro_get_element_class( 'pmpro_box', 'pmpro_account-membership' ); ?>">
-
-				
-				<div class="row <?php echo pmpro_get_element_class( 'pmpro_table' ); ?>" width="100%" cellpadding="0" cellspacing="0" border="0">
-					
-							<div class="col-12">
-								<b><?php _e("My Subscriptions", 'paid-memberships-pro' );?></b>
+			<div id="pmpro_account-membership" class="p-2 <?php echo pmpro_get_element_class( 'pmpro_box', 'pmpro_account-membership' ); ?>">
+				<div class="row ">
+							<div class="col-12 m-2">
+								<b><?php //_e("My Subscriptions", 'paid-memberships-pro' );?></b>
 							</div>
 							<!-- <div class="col-2">
 								<b><?php //_e("Paid", 'paid-memberships-pro' ); ?></b>
@@ -145,7 +142,7 @@ function pmpro_shortcode_account($atts, $content=null, $code="")
 				<?php //Todo: If there are multiple levels defined that aren't all in the same group defined as upgrades/downgrades ?>
 				<div class="<?php echo pmpro_get_element_class( 'pmpro_actionlinks' ); ?>">
 <!-- 					<a id="pmpro_actionlink-levels" href="<?php //echo pmpro_url("levels")?>"><?php //_e("View all Membership Options", 'paid-memberships-pro' );?></a>
- -->					<a id="go-guides" href="<?php echo get_site_url(). '/canada-information-guides/' ?>"><?php _e("View all Guides Available", 'paid-memberships-pro' );?></a>
+ -->					<h3 class="ml-3"><a id="go-guides" href="<?php echo get_site_url(). '/canada-information-guides/' ?>"><?php _e("View all Guides Available", 'paid-memberships-pro' );?>&nbsp;<i class="fas fa-arrow-circle-right"></i></a></h3>
  						
 
 			</div> <!-- end pmpro_account-membership -->

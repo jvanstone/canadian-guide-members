@@ -1,3 +1,19 @@
+<?php
+/**
+ * This part is used show the confirmatuon of the subscriptions available. 
+ *
+ * This is the template that displays all of the inside the <main> section. 
+ *
+ * Added the custom box called .why-register to add reasons to get subscription. 
+ * 
+ * custom scss found in >> assets/sass/7-add-ons/pmrpo-adds.scss
+ * 
+ * @package Canada Info
+ * @subpackage canada_info
+ * @since 1.0.0
+ */
+
+ ?>
 <div class="<?php echo pmpro_get_element_class( 'pmpro_confirmation_wrap' ); ?>">
 <?php
 	global $wpdb, $current_user, $pmpro_invoice, $pmpro_msg, $pmpro_msgt;
@@ -26,7 +42,7 @@
 		$pmpro_invoice->getUser();
 		$pmpro_invoice->getMembershipLevel();
 
-		$confirmation_message .= "<p>" . sprintf(__('Below are details about your membership account and a receipt for your initial membership invoice. A welcome email with a copy of your initial membership invoice has been sent to %s.', 'paid-memberships-pro' ), $pmpro_invoice->user->user_email) . "</p><hr/>";
+		$confirmation_message .= "<p>" . sprintf(__('Below are details about your subscription and a receipt for your invoice. A welcome email with a copy of your subscription invoice has been sent to %s.', 'paid-memberships-pro' ), $pmpro_invoice->user->user_email) . "</p><hr/>";
 
 		// Check instructions
 		if ( $pmpro_invoice->gateway == "check" && ! pmpro_isLevelFree( $pmpro_invoice->membership_level ) ) {

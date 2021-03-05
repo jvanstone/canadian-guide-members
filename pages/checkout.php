@@ -1,10 +1,18 @@
 <?php
-/****
+/**
+ * This part is used show the checkout section. 
+ *
+ * This is the template that displays all of the inside the <main> section. 
+ *
  * 
- *  This has most of the form parts that need to be edited. 
+ * custom scss found in >> assets/sass/7-add-ons/pmrpo-adds.scss
  * 
- * 
+ * @package Canada Info
+ * @subpackage canada_info
+ * @since 1.0.0
  */
+
+
 	global $gateway, $pmpro_review, $skip_account_fields, $pmpro_paypal_token, $wpdb, $current_user, $pmpro_msg, $pmpro_msgt, $pmpro_requirebilling, $pmpro_level, $pmpro_levels, $tospage, $pmpro_show_discount_code, $pmpro_error_fields;
 	global $discount_code, $username, $password, $password2, $bfirstname, $blastname, $baddress1, $baddress2, $bcity, $bstate, $bzipcode, $bcountry, $bphone, $bemail, $bconfirmemail, $CardType, $AccountNumber, $ExpirationMonth,$ExpirationYear;
 
@@ -485,7 +493,7 @@
 						<option value="10" <?php if($ExpirationMonth == "10") { ?>selected="selected"<?php } ?>>10</option>
 						<option value="11" <?php if($ExpirationMonth == "11") { ?>selected="selected"<?php } ?>>11</option>
 						<option value="12" <?php if($ExpirationMonth == "12") { ?>selected="selected"<?php } ?>>12</option>
-					</select>/<select id="ExpirationYear" name="ExpirationYear" class="form-select <?php echo pmpro_get_element_class( '', 'ExpirationYear' ); ?>">
+					</select>&nbsp;/&nbsp;<select id="ExpirationYear" name="ExpirationYear" class="form-select <?php echo pmpro_get_element_class( '', 'ExpirationYear' ); ?>">
 						<?php
 							$num_years = apply_filters( 'pmpro_num_expiration_years', 10 );
 

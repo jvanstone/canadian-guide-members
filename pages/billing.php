@@ -1,3 +1,20 @@
+<?php
+/**
+ * This part is used show the billing options. 
+ *
+ * This is the template that displays all of the inside the <main> section. 
+ *
+ * Added the custom box called .why-register to add reasons to get subscription. 
+ * 
+ * custom scss found in >> assets/sass/7-add-ons/pmrpo-adds.scss
+ * 
+ * @package Canada Info
+ * @subpackage canada_info
+ * @since 1.0.0
+ */
+
+ ?>
+
 <div class="<?php echo pmpro_get_element_class( 'pmpro_billing_wrap' ); ?>">
 <?php
 	global $wpdb, $current_user, $gateway, $pmpro_msg, $pmpro_msgt, $show_check_payment_instructions, $show_paypal_link;
@@ -57,7 +74,7 @@
 				?>
 				<li><strong><?php _e("Level", 'paid-memberships-pro' );?>:</strong> <?php echo $level->name?></li>
 				<?php if($level->billing_amount > 0) { ?>
-					<li><strong><?php _e("Membership Fee", 'paid-memberships-pro' );?>:</strong>
+					<li><strong><?php _e("Subscriptions", 'paid-memberships-pro' );?>:</strong>
 						<?php
 							$level = $current_user->membership_level;
 							if($current_user->membership_level->cycle_number > 1) {
