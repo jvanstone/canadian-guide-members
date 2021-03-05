@@ -1,3 +1,20 @@
+<?php
+/**
+ * This part is used show the levels/subscriptions available. 
+ *
+ * This is the template that displays all of the inside the <main> section. 
+ *
+ * Added the custom box called .why-register to add reasons to get subscription. 
+ * 
+ * custom scss found in >> assets/sass/7-add-ons/pmrpo-adds.scss
+ * 
+ * @package Canada Info
+ * @subpackage canada_info
+ * @since 1.0.0
+ */
+
+ ?>
+
 <div id="pmpro_register">
 <?php 
 global $wpdb, $pmpro_msg, $pmpro_msgt, $current_user;
