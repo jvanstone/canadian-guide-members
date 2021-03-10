@@ -155,13 +155,13 @@
 <?php
 	}
 ?>
-<p class="<?php echo pmpro_get_element_class( 'pmpro_actions_nav' ); ?>">
+<h3 class="<?php echo pmpro_get_element_class( 'pmpro_actions_nav' ); ?>">
 	<?php if ( ! empty( $current_user->membership_level ) ) { ?>
-		<a href="<?php echo pmpro_url( 'account' ); ?>"><?php _e( 'View Your User Account &rarr;', 'paid-memberships-pro' ); ?></a>
+		<a href="<?php echo pmpro_url( 'account' ); ?>"><?php _e( 'View Your User Account <i class="fas fa-arrow-circle-right"></i>', 'paid-memberships-pro' ); ?></a></h3>
 	<?php echo $confirmation_message2; ?>
 	<h3 class="ml-3"><a id="go-guides" href="<?php echo get_site_url(). '/canada-information-guides/' ?>"><?php _e("View all Guides Available", 'paid-memberships-pro' );?>&nbsp;<i class="fas fa-arrow-circle-right"></i></a></h3>
 	<?php } else { ?>
 		<?php _e( 'If your account is not activated within a few minutes, please contact the site owner.', 'paid-memberships-pro' ); ?>
 	<?php } ?>
-</p> <!-- end pmpro_actions_nav -->
+ <!-- end pmpro_actions_nav -->
 </div> <!-- end pmpro_confirmation_wrap -->
