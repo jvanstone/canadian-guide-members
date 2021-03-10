@@ -154,9 +154,9 @@ function pmpro_shortcode_account($atts, $content=null, $code="")
 						//$getvalue = esc_html( $current_user->membership_level->name);
 						$link = get_link_slug( $getvalue , 'post' );
 						$confirmation_message2 = '<h3>' . sprintf(__('<a href="'.$link.'">You now have access to %s <i class="fas fa-arrow-circle-right"></i></a>', 'paid-memberships-pro' ), $current_user->membership_level->name) . "</h3>";
-
+						
 					?>
-					
+						<?php echo $confirmation_message2; ?>
  						<h3 class="ml-3"><a id="go-guides" href="<?php echo get_site_url(). '/canada-information-guides/' ?>"><?php _e("View all Guides Available", 'paid-memberships-pro' );?>&nbsp;<i class="fas fa-arrow-circle-right"></i></a></h3>
  						
 
