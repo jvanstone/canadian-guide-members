@@ -37,13 +37,13 @@
 		$confirmation_message = "<h3>" . __('Your payment has been submitted. You will access to %s shortly.', 'paid-memberships-pro' ) . "</h3>";
 	else
 		$confirmation_message = '<h3>' . sprintf(__('Thank you for payment to %s.</h3><h3><a href="'.$link.'">You now have access %s</a>', 'paid-memberships-pro' ), get_bloginfo("name"), $current_user->membership_level->name) . "</h3>";
-		$confirmation_message2 = '<h3>' . sprintf(__('<a href="'.$link.'">You now have access %s <i class="fas fa-arrow-circle-right"></i></a>', 'paid-memberships-pro' ), $current_user->membership_level->name) . "</h3>";
+		$confirmation_message2 = '<h3>' . sprintf(__('<a href="'.$link.'">You now have access to %s <i class="fas fa-arrow-circle-right"></i></a>', 'paid-memberships-pro' ), $current_user->membership_level->name) . "</h3>";
 
 	//confirmation message for this level
 	$level_message = $wpdb->get_var("SELECT l.confirmation FROM $wpdb->pmpro_membership_levels l LEFT JOIN $wpdb->pmpro_memberships_users mu ON l.id = mu.membership_id WHERE mu.status = 'active' AND mu.user_id = '" . $current_user->ID . "' LIMIT 1");
 	if(!empty($level_message))
 		$confirmation_message .= "\n" . stripslashes($level_message) . "\n";
-		$confirmation_message2 .= "\n" . stripslashes($level_message) . "\n";
+		//$confirmation_message2 .= "\n" . stripslashes($level_message) . "\n";
 ?>
 
 <?php if(!empty($pmpro_invoice) && !empty($pmpro_invoice->id)) { ?>
