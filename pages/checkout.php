@@ -539,7 +539,7 @@
 				<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-name' ); ?>"><?php echo esc_html( $tospage->post_title );?></span>
 			</h3>
 			<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-fields' ); ?>">
-				<div id="pmpro_license" class="col-12 <?php echo pmpro_get_element_class( 'pmpro_checkout-field', 'pmpro_license' ); ?>">
+				<div id="pmpro_license" class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field', 'pmpro_license' ); ?>">
 <?php 
 	/**
 	 * Hook to run formatting filters before displaying the content of your "Terms of Service" page at checkout.
@@ -555,6 +555,7 @@
 	echo $pmpro_tos_content;
 ?>
 				</div> <!-- end pmpro_license -->
+	
 				<?php
 					if ( isset( $_REQUEST['tos'] ) ) {
 						$tos = intval( $_REQUEST['tos'] );
@@ -562,7 +563,7 @@
 						$tos = "";
 					}
 				?>
-				<input class="form-check-input" type="checkbox" name="tos" value="1" id="tos" <?php checked( 1, $tos ); ?> /> <label class="col-6 form-check-label" class="<?php echo pmpro_get_element_class( 'pmpro_label-inline pmpro_clickable', 'tos' ); ?>" for="tos"><?php printf(__('I agree to the %s', 'paid-memberships-pro' ), $tospage->post_title);?></label>
+				<div class="col-10 ml-4"><input class="form-check-input" type="checkbox" name="tos" value="1" id="tos" <?php checked( 1, $tos ); ?> /> <label class="col-6 form-check-label" class="<?php echo pmpro_get_element_class( 'pmpro_label-inline pmpro_clickable', 'tos' ); ?>" for="tos"><?php printf(__('I agree to the %s', 'paid-memberships-pro' ), $tospage->post_title);?></label></div>
 			</div> <!-- end pmpro_checkout-fields -->
 		</div> <!-- end pmpro_tos_fields -->
 		<?php
