@@ -24,6 +24,10 @@
 		<div class="<?php echo pmpro_get_element_class( 'pmpro_message ' . $pmpro_msgt, $pmpro_msgt ); ?>"><?php echo wp_kses_post( $pmpro_msg );?></div>
 	<?php
 	}
+	function get_link_slug( $slug , $type ) {
+		$post = get_page_by_path( $slug, OBJECT, $type );
+		return get_permalink( $post->ID );
+	}
 	
     $getvalue = 'canada-info-issue-1';
 	//$getvalue = esc_html( $current_user->membership_level->name);
