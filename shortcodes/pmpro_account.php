@@ -153,7 +153,7 @@ function pmpro_shortcode_account($atts, $content=null, $code="")
  
 						//$getvalue = esc_html( $current_user->membership_level->name);
 						$link = get_link_slug( $getvalue , 'post' );
-						$confirmation_message2 = '<h3>' . sprintf(__('<a href="'.$link.'">You now have access to %s <i class="fas fa-arrow-circle-right"></i></a>', 'paid-memberships-pro' ), $current_user->membership_level->name) . "</h3>";
+						$confirmation_message2 = '<h3 class="ml-3">' . sprintf(__('<a href="'.$link.'">You now have access to %s <i class="fas fa-arrow-circle-right"></i></a>', 'paid-memberships-pro' ), $current_user->membership_level->name) . "</h3>";
 						
 					?>
 						<?php echo $confirmation_message2; ?>
