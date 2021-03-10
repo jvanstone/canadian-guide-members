@@ -24,15 +24,11 @@
 		<div class="<?php echo pmpro_get_element_class( 'pmpro_message ' . $pmpro_msgt, $pmpro_msgt ); ?>"><?php echo wp_kses_post( $pmpro_msg );?></div>
 	<?php
 	}
-	function get_link_slug( $slug , $type ) {
-		$post = get_page_by_path( $slug, OBJECT, $type );
-		return get_permalink( $post->ID );
-	}
+	
     $getvalue = 'canada-info-issue-1';
 	//$getvalue = esc_html( $current_user->membership_level->name);
-
-
 	$link = get_link_slug( $getvalue , 'post' );
+
 	if(empty($current_user->membership_level))
 		$confirmation_message = "<h3>" . __('Your payment has been submitted. You will access to %s shortly.', 'paid-memberships-pro' ) . "</h3>";
 	else
@@ -159,6 +155,7 @@
 	<?php if ( ! empty( $current_user->membership_level ) ) { ?>
 		<a href="<?php echo pmpro_url( 'account' ); ?>"><?php _e( 'View Your User Account &rarr;', 'paid-memberships-pro' ); ?></a>
 	<?php echo $confirmation_message2; ?>
+	<h3 class="ml-3"><a id="go-guides" href="<?php echo get_site_url(). '/canada-information-guides/' ?>"><?php _e("View all Guides Available", 'paid-memberships-pro' );?>&nbsp;<i class="fas fa-arrow-circle-right"></i></a></h3>
 	<?php } else { ?>
 		<?php _e( 'If your account is not activated within a few minutes, please contact the site owner.', 'paid-memberships-pro' ); ?>
 	<?php } ?>

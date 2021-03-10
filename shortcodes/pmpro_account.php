@@ -142,7 +142,15 @@ function pmpro_shortcode_account($atts, $content=null, $code="")
 				<?php //Todo: If there are multiple levels defined that aren't all in the same group defined as upgrades/downgrades ?>
 				<div class="<?php echo pmpro_get_element_class( 'pmpro_actionlinks' ); ?>">
 <!-- 					<a id="pmpro_actionlink-levels" href="<?php //echo pmpro_url("levels")?>"><?php //_e("View all Membership Options", 'paid-memberships-pro' );?></a>
- -->					<h3 class="ml-3"><a id="go-guides" href="<?php echo get_site_url(). '/canada-information-guides/' ?>"><?php _e("View all Guides Available", 'paid-memberships-pro' );?>&nbsp;<i class="fas fa-arrow-circle-right"></i></a></h3>
+ -->				<?php	   
+ 						$getvalue = 'canada-info-issue-1';
+ 
+						//$getvalue = esc_html( $current_user->membership_level->name);
+						$link = get_link_slug( $getvalue , 'post' );
+						$confirmation_message2 = '<h3>' . sprintf(__('<a href="'.$link.'">You now have access to %s <i class="fas fa-arrow-circle-right"></i></a>', 'paid-memberships-pro' ), $current_user->membership_level->name) . "</h3>";
+
+					?>
+ 						<h3 class="ml-3"><a id="go-guides" href="<?php echo get_site_url(). '/canada-information-guides/' ?>"><?php _e("View all Guides Available", 'paid-memberships-pro' );?>&nbsp;<i class="fas fa-arrow-circle-right"></i></a></h3>
  						
 
 			</div> <!-- end pmpro_account-membership -->
