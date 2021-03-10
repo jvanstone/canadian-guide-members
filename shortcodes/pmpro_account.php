@@ -55,6 +55,7 @@ function pmpro_shortcode_account($atts, $content=null, $code="")
 
 							if ( isset( $order->membership_id ) && ! empty( $order->membership_id ) && empty( $level->id ) ) {
 								$level = pmpro_getLevel( $order->membership_id );
+								echo $level;
 							}
 
 							// If no level check for a default level.
@@ -76,12 +77,34 @@ function pmpro_shortcode_account($atts, $content=null, $code="")
 							?>
 						
 							<?php } else { ?>
+
 							<?php
 								foreach($mylevels as $level) {
 							?>
-							
+								<?php	 
+									function get_link_slug( $slug , $type ) {
+										$post = get_page_by_path( $slug, OBJECT, $type );
+										return get_permalink( $post->ID );
+									}
+
+									
+									$getvalue = 'canada-info-issue-1';
+			
+									//$getvalue = esc_html( $current_user->membership_level->name);
+									
+									
+								?>
 								<div class="col-12 m-1 <?php echo pmpro_get_element_class( 'pmpro_account-membership-levelname' ); ?>">
-									<?php echo $level->name?>
+								
+									<?php 
+									$link = get_link_slug( $getvalue, 'post' );
+									//$link = get_link_slug( $level->name, 'post' );
+									echo $level->name;	
+									$confirmation_message2 = '<h3 class="ml-3">' . sprintf(__('<a href="'.$link.'">View %s now <i class="fas fa-arrow-circle-right"></i></a>', 'paid-memberships-pro' ), $current_user->membership_level->name) . "</h3>";
+
+									?>
+
+									<?php echo $confirmation_message2; ?>
 									<div class="<?php echo pmpro_get_element_class( 'pmpro_actionlinks' ); ?>">
 										<?php do_action("pmpro_member_action_links_before"); ?>
 
@@ -142,22 +165,9 @@ function pmpro_shortcode_account($atts, $content=null, $code="")
 				<?php //Todo: If there are multiple levels defined that aren't all in the same group defined as upgrades/downgrades ?>
 				<div class="<?php echo pmpro_get_element_class( 'pmpro_actionlinks' ); ?>">
 <!-- 					<a id="pmpro_actionlink-levels" href="<?php //echo pmpro_url("levels")?>"><?php //_e("View all Membership Options", 'paid-memberships-pro' );?></a>
- -->				<?php	 
-						function get_link_slug( $slug , $type ) {
-							$post = get_page_by_path( $slug, OBJECT, $type );
-							return get_permalink( $post->ID );
-						}
-
+ -->			
 						
- 						$getvalue = 'canada-info-issue-1';
- 
-						//$getvalue = esc_html( $current_user->membership_level->name);
-						$link = get_link_slug( $getvalue , 'post' );
-						$confirmation_message2 = '<h3 class="ml-3">' . sprintf(__('<a href="'.$link.'">You now have access to %s <i class="fas fa-arrow-circle-right"></i></a>', 'paid-memberships-pro' ), $current_user->membership_level->name) . "</h3>";
-						
-					?>
-						<?php echo $confirmation_message2; ?>
- 						<h3 class="ml-3"><a id="go-guides" href="<?php echo get_site_url(). '/canada-information-guides/' ?>"><?php _e("View all Guides Available", 'paid-memberships-pro' );?>&nbsp;<i class="fas fa-arrow-circle-right"></i></a></h3>
+ 						<p class="ml-3"><a id="go-guides" href="<?php echo get_site_url(). '/canada-information-guides/' ?>"><?php _e("View all Guides Available", 'paid-memberships-pro' );?>&nbsp;<i class="fas fa-arrow-circle-right"></i></a></p>
  						
 
 			</div> <!-- end pmpro_account-membership -->
