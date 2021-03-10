@@ -562,7 +562,7 @@
 						$tos = "";
 					}
 				?>
-				<input class="form-check-input" type="checkbox" name="tos" value="1" id="tos" <?php checked( 1, $tos ); ?> /> <label class="form-check-label" class="<?php echo pmpro_get_element_class( 'pmpro_label-inline pmpro_clickable', 'tos' ); ?>" for="tos"><?php printf(__('I agree to the %s', 'paid-memberships-pro' ), $tospage->post_title);?></label>
+				<input class="form-check-input" type="checkbox" name="tos" value="1" id="tos" <?php checked( 1, $tos ); ?> /> <label class="col-6 form-check-label" class="<?php echo pmpro_get_element_class( 'pmpro_label-inline pmpro_clickable', 'tos' ); ?>" for="tos"><?php printf(__('I agree to the %s', 'paid-memberships-pro' ), $tospage->post_title);?></label>
 			</div> <!-- end pmpro_checkout-fields -->
 		</div> <!-- end pmpro_tos_fields -->
 		<?php
