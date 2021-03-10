@@ -36,7 +36,7 @@
 	if(empty($current_user->membership_level))
 		$confirmation_message = "<h3>" . __('Your payment has been submitted. You will access to %s shortly.', 'paid-memberships-pro' ) . "</h3>";
 	else
-		$confirmation_message = '<h3>' . sprintf(__('Thank you for payment to %s.</h3><h3><a href="'.$link.'">You now have access %s</a>', 'paid-memberships-pro' ), get_bloginfo("name"), $current_user->membership_level->name) . "</h3>";
+		$confirmation_message = '<h3>' . sprintf(__('Thank you for payment to %s.</h3><h3><a href="'.$link.'">You now have access to %s <i class="fas fa-arrow-circle-right"></i></a>', 'paid-memberships-pro' ), get_bloginfo("name"), $current_user->membership_level->name) . "</h3>";
 		$confirmation_message2 = '<h3>' . sprintf(__('<a href="'.$link.'">You now have access to %s <i class="fas fa-arrow-circle-right"></i></a>', 'paid-memberships-pro' ), $current_user->membership_level->name) . "</h3>";
 
 	//confirmation message for this level
