@@ -103,7 +103,7 @@ if($pmpro_msg)
 					?>
 					
 						<li><a class="<?php echo pmpro_get_element_class( 'pmpro_btn disabled', 'pmpro_btn' ); ?>" href="<?php echo pmpro_url("account")?>"><?php _e('✓', 'paid-memberships-pro' );?></a></li>
-						<li><h3><a href="<?php echo get_site_url() ?>/canada-info-guide-issue-1/">You have access, see it now!&nbsp;<i class="fas fa-arrow-circle-right"></i></a></h3></li>
+						<li><h3><a href="<?php echo get_site_url(); ?>/canada-info-guide-issue-1/">You have access, see it now!&nbsp;<i class="fas fa-arrow-circle-right"></i></a></h3></li>
 					</ul>
 					<?php
 				}

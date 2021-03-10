@@ -1,6 +1,6 @@
 <?php
 /**
- * This part is used show the confirmatuon of the subscriptions available. 
+ * This part is used show the confirmation of the subscriptions available. 
  *
  * This is the template that displays all of the inside the <main> section. 
  *
@@ -24,16 +24,26 @@
 		<div class="<?php echo pmpro_get_element_class( 'pmpro_message ' . $pmpro_msgt, $pmpro_msgt ); ?>"><?php echo wp_kses_post( $pmpro_msg );?></div>
 	<?php
 	}
+	function get_link_slug( $slug , $type ) {
+		$post = get_page_by_path( $slug, OBJECT, $type );
+		return get_permalink( $post->ID );
+	}
+    $getvalue = 'canada-info-issue-1';
+	//$getvalue = esc_html( $current_user->membership_level->name);
 
+
+	$link = get_link_slug( $getvalue , 'post' );
 	if(empty($current_user->membership_level))
 		$confirmation_message = "<h3>" . __('Your payment has been submitted. You will access to %s shortly.', 'paid-memberships-pro' ) . "</h3>";
 	else
-		$confirmation_message = "<h3>" . sprintf(__('Thank you for payment to %s.</p><p> You now have access %s', 'paid-memberships-pro' ), get_bloginfo("name"), $current_user->membership_level->name) . "</h3>";
+		$confirmation_message = '<h3>' . sprintf(__('Thank you for payment to %s.</h3><h3><a href="'.$link.'">You now have access %s</a>', 'paid-memberships-pro' ), get_bloginfo("name"), $current_user->membership_level->name) . "</h3>";
+		$confirmation_message2 = '<h3>' . sprintf(__('<a href="'.$link.'">You now have access %s <i class="fas fa-arrow-circle-right"></i></a>', 'paid-memberships-pro' ), $current_user->membership_level->name) . "</h3>";
 
 	//confirmation message for this level
 	$level_message = $wpdb->get_var("SELECT l.confirmation FROM $wpdb->pmpro_membership_levels l LEFT JOIN $wpdb->pmpro_memberships_users mu ON l.id = mu.membership_id WHERE mu.status = 'active' AND mu.user_id = '" . $current_user->ID . "' LIMIT 1");
 	if(!empty($level_message))
 		$confirmation_message .= "\n" . stripslashes($level_message) . "\n";
+		$confirmation_message2 .= "\n" . stripslashes($level_message) . "\n";
 ?>
 
 <?php if(!empty($pmpro_invoice) && !empty($pmpro_invoice->id)) { ?>
@@ -148,6 +158,7 @@
 <p class="<?php echo pmpro_get_element_class( 'pmpro_actions_nav' ); ?>">
 	<?php if ( ! empty( $current_user->membership_level ) ) { ?>
 		<a href="<?php echo pmpro_url( 'account' ); ?>"><?php _e( 'View Your User Account &rarr;', 'paid-memberships-pro' ); ?></a>
+	<?php echo $confirmation_message2; ?>
 	<?php } else { ?>
 		<?php _e( 'If your account is not activated within a few minutes, please contact the site owner.', 'paid-memberships-pro' ); ?>
 	<?php } ?>
