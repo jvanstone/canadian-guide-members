@@ -539,7 +539,7 @@
 				<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-name' ); ?>"><?php echo esc_html( $tospage->post_title );?></span>
 			</h3>
 			<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-fields' ); ?>">
-				<div id="pmpro_license" class="<?php echo pmpro_get_element_class( 'pmpro_checkout-field', 'pmpro_license' ); ?>">
+				<div id="pmpro_license" class="col-12 <?php echo pmpro_get_element_class( 'pmpro_checkout-field', 'pmpro_license' ); ?>">
 <?php 
 	/**
 	 * Hook to run formatting filters before displaying the content of your "Terms of Service" page at checkout.
