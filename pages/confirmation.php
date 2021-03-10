@@ -155,7 +155,7 @@
 <?php
 	}
 ?>
-<h3 class="<?php echo pmpro_get_element_class( 'pmpro_actions_nav' ); ?>">
+<h3 class="<?php echo pmpro_get_element_class( 'pmpro_actions_nav_left' ); ?>">
 	<?php if ( ! empty( $current_user->membership_level ) ) { ?>
 		<a href="<?php echo pmpro_url( 'account' ); ?>"><?php _e( 'View Your User Account <i class="fas fa-arrow-circle-right"></i>', 'paid-memberships-pro' ); ?></a></h3>
 	<?php echo $confirmation_message2; ?>
