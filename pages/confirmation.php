@@ -5,17 +5,17 @@
  * This is the template that displays all of the inside the <main> section.
  *
  * Added the custom box called .why-register to add reasons to get subscription.
- *  
+ *
  * custom scss found in >> assets/sass/7-add-ons/pmrpo-adds.scss
- * 
+ *
  * @package WordPress
  * @subpackage canada_info
  * @since Canada_Info 1.0
  */
 
- ?>
+?>
 
-<div class="<?php echo pmpro_get_element_class(  'pmpro_confirmation_wrap'  ); ?>">
+<div class="<?php echo pmpro_get_element_class( 'pmpro_confirmation_wrap' ); ?>">
 <?php
 	global $wpdb, $current_user, $pmpro_invoice, $pmpro_msg, $pmpro_msgt;
 
