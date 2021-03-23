@@ -166,8 +166,8 @@ function pmpro_shortcode_account($atts, $content=null, $code="")
 				<div class="<?php echo pmpro_get_element_class( 'pmpro_actionlinks' ); ?>">
 <!-- 					<a id="pmpro_actionlink-levels" href="<?php //echo pmpro_url("levels")?>"><?php //_e("View all Membership Options", 'paid-memberships-pro' );?></a>
  -->			
-						
- 						<p class="ml-3"><a id="go-guides" href="<?php echo get_site_url(). '/canada-information-guides/' ?>"><?php _e("View all Guides Available", 'paid-memberships-pro' );?>&nbsp;<i class="fas fa-arrow-circle-right"></i></a></p>
+
+ 						<p class="ml-3"><a id="go-guides" href="<?php echo get_site_url(). '/guide/all-guides/' ?>"><?php _e("View all Guides Available", 'paid-memberships-pro' );?>&nbsp;<i class="fas fa-arrow-circle-right"></i></a></p>
  						
 
 			</div> <!-- end pmpro_account-membership -->
