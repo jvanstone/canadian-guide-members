@@ -99,7 +99,7 @@ function pmpro_shortcode_account($atts, $content=null, $code="")
 									<?php 
 									$link = get_link_slug( $getvalue, 'post' );
 									//$link = get_link_slug( $level->name, 'post' );
-									echo $level->name;	
+									esc_html_e( '<h3 class="ml-3">' . $level->name . '</h3>' );	
 									$confirmation_message2 = '<h3 class="ml-3">' . sprintf(__('<a href="'.$link.'">View %s now <i class="fas fa-arrow-circle-right"></i></a>', 'paid-memberships-pro' ), $current_user->membership_level->name) . "</h3>";
 
 									?>
