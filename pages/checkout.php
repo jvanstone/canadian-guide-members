@@ -574,7 +574,7 @@
 	<?php do_action("pmpro_checkout_after_tos_fields"); ?>
 
 	<?php do_action("pmpro_checkout_before_submit_button"); ?>
-	<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-name' ); ?>"><?php _e('2) Finish Account Setup with PayPal payment', 'paid-memberships-pro' );?></span>
+	<h3 class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-name' ); ?>"><?php _e('2) Finish Account Setup with PayPal payment', 'paid-memberships-pro' );?></h3>
 
 	<div class="<?php echo pmpro_get_element_class( 'pmpro_submit' ); ?>">
 		<hr />
