@@ -265,7 +265,6 @@
 	<?php
 		do_action('pmpro_checkout_boxes');
 	?>
-	<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-name' ); ?>"><?php _e('2) Finish Account Setup with PayPal payment', 'paid-memberships-pro' );?></span>
 
 	<?php if(pmpro_getGateway() == "paypal" && empty($pmpro_review) && true == apply_filters('pmpro_include_payment_option_for_paypal', true ) ) { ?>
 
@@ -575,6 +574,7 @@
 	<?php do_action("pmpro_checkout_after_tos_fields"); ?>
 
 	<?php do_action("pmpro_checkout_before_submit_button"); ?>
+	<span class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-name' ); ?>"><?php _e('2) Finish Account Setup with PayPal payment', 'paid-memberships-pro' );?></span>
 
 	<div class="<?php echo pmpro_get_element_class( 'pmpro_submit' ); ?>">
 		<hr />
