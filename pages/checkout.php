@@ -81,7 +81,7 @@
 			</h3>
 			<div class="<?php echo pmpro_get_element_class( 'pmpro_checkout-fields' ); ?>">
 				<h3>
-					<?php printf(__('You are about to purcahse <strong>%s</strong>', 'paid-memberships-pro' ), $pmpro_level->name);?>
+					<?php printf(__('You are about to purchase <strong>%s</strong>', 'paid-memberships-pro' ), $pmpro_level->name);?>
 				</h3>
 
 				<?php
@@ -574,7 +574,6 @@
 	<?php do_action("pmpro_checkout_after_tos_fields"); ?>
 
 	<?php do_action("pmpro_checkout_before_submit_button"); ?>
-	<h3 class="<?php echo pmpro_get_element_class( 'pmpro_checkout-h3-name' ); ?>"><?php _e('2) Finish Account Setup with PayPal payment', 'paid-memberships-pro' );?></h3>
 
 	<div class="<?php echo pmpro_get_element_class( 'pmpro_submit' ); ?>">
 		<hr />
